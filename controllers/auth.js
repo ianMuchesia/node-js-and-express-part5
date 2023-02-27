@@ -27,7 +27,7 @@ const register = async (req, res) => {
     expiresIn:'30d',
   }) */
   const token = user.createJWT()
-  res.status(StatusCodes.CREATED).json({user:{name:user.name},token}); 
+  res.status(StatusCodes.CREATED).json({user: {name:user.name},token}); 
 /*  res.status(StatusCodes.CREATED).json({user:{name:user.getName()},token}); */
 };
 

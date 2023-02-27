@@ -4,7 +4,7 @@ const express = require('express')
 
 const connectDB = require('./db/connect')
 
-const authenticationUser = require('./middleware/authentication')
+const authenticateUser = require('./middleware/authentication')
 
 const app = express()
 
@@ -23,7 +23,7 @@ app.use(express.json())
 //extra packages
 
 //routes
-app.use('/api/v1/jobs', authenticationUser,jobRoute)
+app.use('/api/v1/jobs', authenticateUser,jobRoute)
 app.use('/api/v1/auth',authRoute)
 
 app.use(notFoundMiddleware);
